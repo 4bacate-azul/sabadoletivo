@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<!--Botão que esconde e mostra um parágrafo -->
+<button id="toggleButton1">Mostrar/Esconder Parágrafo</button>
+<p id="paragraph1">Este é um parágrafo que pode ser escondido e mostrado.</p>
+
+<!--Lista de Tarefas -->
+<h2>Lista de Tarefas</h2>
+<input type="text" id="taskInput" placeholder="Adicione um item na lista">
+<button id="addTask">Adicionar Tarefa</button>
+<ul id="taskList">
+</ul>
+
+<!--Trocar a cor de fundo -->
+<button id="changeColorButton">Trocar a Cor de Fundo</button>
+
+<script>
+    $("#toggleButton1").click(function() {
+        $("#paragraph1").toggle();
+    });
+
+    $("#addTask").click(function() {
+        var taskText = $("#taskInput").val();
+        if (taskText !== "") {
+            $("#taskList").append("<li>" + taskText + "</li>");
+            $("#taskInput").val("");
+        }
+    });
+
+    $("#changeColorButton").click(function() {
+        var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+        $("body").css("background-color", randomColor);
+    });
+</script>
+
+</body>
+</html>

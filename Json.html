@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Funções com JSON</title>
+</head>
+<body>
+
+<h2>Funções com JSON</h2>
+
+<p><strong>Função 1: Converter JSON para Objeto</strong></p>
+<button onclick="jsonToObject()">Converter JSON para Objeto</button>
+<p id="jsonToObjectResult"></p>
+
+<p><strong>Função 2: Converter Objeto para JSON</strong></p>
+<button onclick="objectToJson()">Converter Objeto para JSON</button>
+<p id="objectToJsonResult"></p>
+
+<p><strong>Função 3: Acessar Dados JSON</strong></p>
+<button onclick="accessJsonData()">Acessar Dados JSON</button>
+<p id="accessJsonDataResult"></p>
+
+<script>
+    // Converter JSON para Objeto
+    function jsonToObject() {
+        var jsonString = '{"nome": "João", "idade": 30, "cidade": "São Paulo"}';
+        var jsonObj = JSON.parse(jsonString);
+        document.getElementById("jsonToObjectResult").innerHTML = JSON.stringify(jsonObj);
+    }
+
+    //Converter Objeto para JSON
+    function objectToJson() {
+        var person = {nome: "Maria", idade: 25, cidade: "Rio de Janeiro"};
+        var jsonString = JSON.stringify(person);
+        document.getElementById("objectToJsonResult").innerHTML = jsonString;
+    }
+
+    //Acessar Dados JSON
+    function accessJsonData() {
+        var jsonString = '{"nome": "Carlos", "idade": 40, "cidade": "Belo Horizonte"}';
+        var jsonObj = JSON.parse(jsonString);
+        var idade = jsonObj.idade;
+        document.getElementById("accessJsonDataResult").innerHTML = "Idade: " + idade;
+    }
+</script>
+
+</body>
+</html>
